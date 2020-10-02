@@ -6,14 +6,26 @@ namespace lab3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Это программа для функции y=x*x-7x+10");
-            Console.WriteLine("Введите шаг построения");
-            double step = GetValCorrect();
-            Console.WriteLine("Введите минимальное значение X");
-            double MinX = GetValCorrect();
-            Console.WriteLine("Введите максимальное значение X");
-            double MaxX = GetValCorrect();
-            DrawTable(step, MinX, MaxX);
+            do
+            {
+                Console.WriteLine("Это программа для функции y=x*x-7x+10");
+                Console.WriteLine("Введите шаг построения");
+                double step = GetValCorrect();
+                Console.WriteLine("Введите минимальное значение X");
+                double MinX = GetValCorrect();
+                Console.WriteLine("Введите максимальное значение X");
+                double MaxX = GetValCorrect();
+                if (MaxX > MinX)
+                {
+                    DrawTable(step, MinX, MaxX);
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Минимальное значение не должно быть больше или равно максимального");
+                }
+            }while(true);
         }
 
         static double GetY(Double x)
