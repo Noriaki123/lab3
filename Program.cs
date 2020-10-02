@@ -98,12 +98,13 @@ namespace lab3
         static double GetValCorrect()
         {
             bool check = true;
+            double y;
             string x;
             do
             {
                 x = Console.ReadLine();
                 Console.Clear();
-                if (Double.TryParse(x, out double y))
+                if (Double.TryParse(x, out y))
                 {
                     check = false;
                 }
@@ -112,7 +113,7 @@ namespace lab3
                     Console.WriteLine("Вы ввели неверное значение, попробуйте ещё раз");
                 }
             } while (check);
-            return Double.Parse(x);
+            return y;
         }
     }
 }
